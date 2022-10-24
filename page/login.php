@@ -2,6 +2,11 @@
 
 session_start();
 
+if (isset($_COOKIE['id'])) {
+  header('Location: redirect.php');
+} 
+
+
 ?>
 
 <!doctype html>
@@ -61,7 +66,7 @@ session_start();
         </div>
 
         <div class="col-3 offset-1">
-          <form action="proses.php" action="POST">
+          <form action="proses.php" method="POST">
             <div class="row">
               <div class="col-12">
                 <input type="text" name="txt_email" class="input-login" style="margin-top: 200px;" placeholder="Email">
@@ -96,7 +101,7 @@ session_start();
             </div>
             <div class="row">
               <div class="col-12">
-                <button type="submit" name="login" class="btn btn-primary wg-font-bold btn-login-login">Login</button>
+                <input type="submit" name="login" class="btn btn-primary wg-font-bold btn-login-login" value="Login" />
               </div>
           </form>
         </div>
@@ -108,11 +113,11 @@ session_start();
   </div>
 
   <?php
-  if (isset($_SESSION['flashData'])) {
+  if (isset($_SESSION['flashLogin'])) {
   ?> <script>
       Swal.fire(
         'Gagal',
-        '<?php echo $_SESSION['flashData'] ?>',
+        '<?php echo $_SESSION['flashLogin'] ?>',
         'error'
       )
     </script> <?php

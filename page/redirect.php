@@ -2,14 +2,10 @@
 
 session_start();
 
-if (!isset($_SESSION['id'])) {
-    //echo($_COOKIE['id']);
-    header('Location: login.php');
+if ($_GET['loading'] == md5('Admin')) {
+    header('Location: admin/dashboard.php');
 } else {
-    //echo($_COOKIE['id']);
-    if ($_SESSION['roles'] == 'Admin') {
-        header('Location: admin/dashboard.php');
-    } else {
-        header('Location: sales/dashboard_sales.php');
-    }
+    header('Location: sales/dashboard_sales.php');
 }
+
+?>
