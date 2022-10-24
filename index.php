@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/stylel.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -49,9 +49,11 @@
             <p>untuk bisa melihatnya dengan lebih jelas,</p><br>
             <p>kita hanya butuh kacamata yang pas.</p>
           </div>
-          <div class="btn btn-light wg-font-semibold wg-font-color-1 me-4" style="width: 113px; font-size: 16px; margin-top: 35px;">Masuk</div>
+          <a class="btn btn-light me-4 wg-font-semibold wg-font-color-1" href="page/login.php" style="width: 113px; font-size: 16px; margin-top: 35px;">Masuk</a>
+          <!-- <div class="btn btn-light me-4" style="width: 113px; font-size: 16px; margin-top: 35px;"><a href="page/login.php" class="wg-font-semibold wg-font-color-1">Masuk</a></div> -->
 
-          <div class="btn  wg-font-semibold wg-font-color-white" style="width: 113px; font-size: 16px; margin-top: 35px; border-width: 2px; border-color: white;">Lacak</div>
+          <a class="btn  btn-lacak wg-font-semibold wg-font-color-white" href="page/tracking.php" style="width: 113px; font-size: 16px; margin-top: 35px; border-width: 2px; border-color: white;">Lacak</a>
+          <!-- <div class="btn  wg-font-semibold wg-font-color-white" style="width: 113px; font-size: 16px; margin-top: 35px; border-width: 2px; border-color: white;"><a href="page/tracking.php">Lacak</a></div> -->
         </div>
         <div id="carouselExampleControls" class="col-5 offset-2 carousel slide" data-bs-ride="carousel" style="margin-top: 178px; height: 305px;">
           <div class="carousel-inner" style="border-radius: 8px;">
@@ -84,9 +86,9 @@
           Our Product
         </div>
       </div>
-      <div class="row" style="margin-top: 41px; margin-bottom: 101px;">
+      <div class="row" style="margin-top: 41px;">
 
-        <div class="col-4">
+        <div class="col-4" style="margin-bottom: 101px;">
           <div class="container-fluid">
             <div class="row">
               <div class="col-6 offset-3">

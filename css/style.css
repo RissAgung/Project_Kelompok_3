@@ -61,6 +61,16 @@ p {
   display: inline;
 }
 
+a {
+  display: inline;
+}
+
+.btn-lacak:hover{
+  background-color: #212531 !important;
+  border-color: #D3D3D3 !important;
+  transition: 0,5s;
+}
+
 .wg-navbar-title{
   font-size: 20px;
   /* background-color: aqua; */
