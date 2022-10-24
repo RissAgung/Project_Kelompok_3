@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -7,10 +13,12 @@
   <title>Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sweetalert2.css">
 </head>
 
 <body class="wg-color-1 wg-font-color-white">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="../js/sweetalert2.js"></script>
 
   <!-- navbar -->
   <div class="container-fluid wg-navbar wg-color-1 position-fixed">
@@ -24,10 +32,10 @@
           <a href="login.php" class="wg-font-medium wg-decoration-link-none">Login</a>
         </div>
         <div class="col-lg-1 wg-navbar-lcl">
-        <a href="tracking.php" class="wg-font-medium wg-decoration-link-none">Cari</a>
+          <a href="tracking.php" class="wg-font-medium wg-decoration-link-none">Cari</a>
         </div>
         <div class="col-lg-1 wg-navbar-lcl">
-        <a href="../index.php" class="wg-font-medium wg-decoration-link-none">Home</a>
+          <a href="../index.php" class="wg-font-medium wg-decoration-link-none">Home</a>
         </div>
       </div>
     </div>
@@ -51,47 +59,65 @@
             </div>
           </div>
         </div>
+
         <div class="col-3 offset-1">
-          <div class="row">
-            <div class="col-12">
-              <input type="text" class="input-login" style="margin-top: 200px;" placeholder="Username">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <input type="password" class="input-login" style="margin-top: 44px;" placeholder="Password">
-            </div>
-          </div>
-          <div class="row" style="margin-top: 29px;">
-            <div class="col-6 wg-font-semibold" style="font-size: 15px;">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Keep Login
-                </label>
+          <form action="proses.php" action="POST">
+            <div class="row">
+              <div class="col-12">
+                <input type="text" name="txt_email" class="input-login" style="margin-top: 200px;" placeholder="Email">
               </div>
             </div>
-            <div class="col-6 wg-font-semibold text-end" style="font-size: 15px;">
-              <a href="">Forget password</a>
+            <div class="row">
+              <div class="col-12">
+                <input type="password" name="txt_password" class="input-login" style="margin-top: 44px;" placeholder="Password">
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="container">
-              <div class="row">
-                <div class="col-12" style="margin-top: 20px;">
-                  <hr class="wg-color-3">
+            <div class="row" style="margin-top: 29px;">
+              <div class="col-6 wg-font-semibold" style="font-size: 15px;">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Keep Login
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 wg-font-semibold text-end" style="font-size: 15px;">
+                <a href="">Forget password</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12" style="margin-top: 20px;">
+                    <hr class="wg-color-3">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <button type="button" class="btn btn-primary wg-font-bold btn-login-login">Login</button>
-            </div>
-          </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" name="login" class="btn btn-primary wg-font-bold btn-login-login">Login</button>
+              </div>
+          </form>
         </div>
-      </div>
 
+      </div>
     </div>
+
   </div>
+  </div>
+
+  <?php
+  if (isset($_SESSION['flashData'])) {
+  ?> <script>
+      Swal.fire(
+        'Gagal',
+        '<?php echo $_SESSION['flashData'] ?>',
+        'error'
+      )
+    </script> <?php
+            }
+            unset($_SESSION['flashLogin']);
+              ?>
+
 </body>
