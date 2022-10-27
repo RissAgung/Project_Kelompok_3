@@ -27,7 +27,7 @@ if ($_SESSION['roles'] == 'Sales') {
   <title>Bootstrap demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/dashboard.css">
+  <link rel="stylesheet" href="../../css/dashboards.css">
 </head>
 
 <body>
@@ -58,14 +58,15 @@ if ($_SESSION['roles'] == 'Sales') {
             <span class="description wg-font-bold">Invoice</span>
           </a>
         </div>
-        <div class="list-item">
-          <a href="../proses.php?logout">
-            <img src="../../Asset/icon/ic_Invoice.svg" alt="" class="icon">
-            <span class="description wg-font-bold">Logout</span>
-          </a>
+        <div class="item-logout">
+          <div class="list-item">
+            <a href="../proses.php?logout">
+              <img src="../../Asset/icon/ic_Logout.svg" alt="" class="icon">
+              <span class="description wg-font-bold">Logout</span>
+            </a>
+          </div>
         </div>
       </div>
-
     </div>
 
     <div class="main-content">

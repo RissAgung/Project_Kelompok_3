@@ -34,7 +34,7 @@ if ($_SESSION['roles'] == 'Admin') {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
   <div class="main-container d-flex wg-font-color-white">
-    <div class="sidebar d-flex">
+    <!-- <div class="sidebar d-flex">
       <div class="header wg-font-extrabold">
         <p class="header1">WG </p>
         <p class="header2">OPTICAL</p>
@@ -65,11 +65,50 @@ if ($_SESSION['roles'] == 'Admin') {
           </a>
         </div>
       </div>
+    </div> -->
+    
 
-    </div>
-
-    <div class="main-content">
-
+    <div class="main-content d-flex">
+      <div class="header wg-font-extrabold wg-font-color-2">
+        <p> Catalog Product</p>
+      </div>
+      <div class="navbar d-flex">
+        <div class="tab-bar d-flex wg-font-bold wg-font-color-2">
+          <div>
+            <input type="radio" name="grade" id="grade-a" checked>
+            <label class="grade grade-a" for="grade-a">Grade A</label>
+          </div>
+          <div>
+            <input type="radio" name="grade" id="grade-b">
+            <label class="grade grade-b" for="grade-b">Grade B</label>
+          </div>
+          <div>
+            <input type="radio" name="grade" id="spesial">
+            <label class="grade spesial" for="spesial">Spesial</label>
+          </div>
+        </div>
+        <div class="search-bar d-flex">
+          <img src="../../Asset/icon/ic_search.svg" alt="">
+          <input class="search wg-font-medium" type="text" placeholder="Cari Produk">
+        </div>
+        <div class="card-notif d-flex">
+          <div class="notif">
+            <div class="btn btn-lonceng d-flex">
+              <img src="../../Asset/icon/ic_notif.svg" alt="">
+            </div>
+          </div>
+          <div class="keranjang">
+            <div class="btn btn-keranjang d-flex">
+              <img src="../../Asset/icon/ic_card.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="catalog d-flex">
+        <?php for($i=0; $i<30; $i++) : ?>
+          <div class="item"></div>
+        <?php endfor ?>
+      </div>
     </div>
   </div>
 </body>
