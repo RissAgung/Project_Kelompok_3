@@ -25,8 +25,8 @@ $json = array(
     "data" => array()
 );
 
-$email = isset($_GET['email']) ? $_GET['email'] : '';
-$password = isset($_GET['password']) ? md5($_GET['password']) : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$password = isset($_POST['password']) ? md5($_POST['password']) : '';
 
 $query = "SELECT * FROM users WHERE email = '$email'";
 $result = $_query->execute($query);
@@ -45,11 +45,11 @@ if ($num != 0) {
     if ($arr_row['email'] == $email && $arr_row['password'] == $password) {
         $json['data'][] = $arr_row;
     } else {
-        $json['response_status'] = 'Error';
+        $json['response_status'] = 'wrong_emailpassword';
         $json['response_messages'] = 'Email atau Password salah';
     }
 } else {
-    $json['response_status'] = 'Error';
+    $json['response_status'] = 'email_not_found';
         $json['response_messages'] = 'Email tidak ditemukan';
 }
 
