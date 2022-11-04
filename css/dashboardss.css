@@ -8,12 +8,31 @@
   padding: 26px;
   box-sizing: border-box;
   flex-direction: column;
+  transition: all ease-in-out .3s;
 }
 
-.main-container .sidebar .header {
-  margin-left: 22px;
-  font-size: 20px;
+.sidebar.hide{
+  width: 114px;
+  z-index: 999;
+  transition: all ease-in-out .3s;
+}
+
+.sidebar .header{
   margin-bottom: 50px;
+  margin-left: 22px;
+  width: 100%;
+}
+
+.sidebar.hide .header{
+  margin-bottom: 50px;
+  margin-left: 0 !important;
+  text-align: center;
+  width: 100%;
+}
+
+.main-container .sidebar.hide .header .header2{
+  display: none;
+  transition: ease-in-out 2s;
 }
 
 .main-container .sidebar .header .header1 {
@@ -35,8 +54,17 @@
   margin-right: 9px;
 }
 
+.sidebar.hide .main .list-item .icon {
+  margin-right: 0px !important;
+}
+
 .sidebar .main .list-item .description {
   font-size: 16px;
+}
+
+.sidebar.hide .main .list-item .description {
+  display: none;
+  transition: ease-in-out 2s;
 }
 
 .sidebar .main {
@@ -57,9 +85,21 @@
   flex-direction: row;
   align-items: center;
   border-radius: 5px;
-  padding: 22px 19px;
+  padding: 20px;
   width: 244px;
   box-sizing: border-box;
+  height: 58px;
+}
+
+.sidebar.hide .main .list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 58px;
 }
 
 .sidebar .main .item-logout .list-item {
@@ -79,7 +119,15 @@
 
 .main-content .header {
   font-size: 24px;
-  margin-left: 15px;
+  margin-left: 11px;
+  background-color: #F9511C;
+  align-items: center;
+}
+
+.main-content .header label{
+  position: relative;
+  top: -2px;
+  margin-right: 25px;
 }
 
 .main-content .navbar {

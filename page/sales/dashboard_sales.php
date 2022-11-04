@@ -27,14 +27,12 @@ if ($_SESSION['roles'] == 'Admin') {
   <title>Bootstrap demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/dashboard.css">
+  <link rel="stylesheet" href="../../css/dashboardss.css">
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
   <div class="main-container d-flex wg-font-color-white">
-    <!-- <div class="sidebar d-flex">
+    <div class="sidebar d-flex">
       <div class="header wg-font-extrabold">
         <p class="header1">WG </p>
         <p class="header2">OPTICAL</p>
@@ -65,12 +63,17 @@ if ($_SESSION['roles'] == 'Admin') {
           </a>
         </div>
       </div>
-    </div> -->
-    
+    </div>
+
 
     <div class="main-content d-flex">
-      <div class="header wg-font-extrabold wg-font-color-2">
-        <p> Catalog Product</p>
+      <div class="header d-flex wg-font-extrabold wg-font-color-2">
+        <input type="checkbox" id="check" style="display: none;">
+        <label for="check" id="hamburger">
+          <img src="../../Asset/icon/ic_burger.svg" alt="">
+        </label>
+
+        Catalog Product
       </div>
       <div class="navbar d-flex">
         <div class="tab-bar d-flex wg-font-bold wg-font-color-2">
@@ -105,12 +108,15 @@ if ($_SESSION['roles'] == 'Admin') {
         </div>
       </div>
       <div class="catalog d-flex">
-        <?php for($i=0; $i<30; $i++) : ?>
+        <?php for ($i = 0; $i < 30; $i++) : ?>
           <div class="item"></div>
         <?php endfor ?>
       </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="../../js/jquery-3.6.1.min.js"></script>
+  <script src="../../js/script.js"></script>
 </body>
 
 </html>
